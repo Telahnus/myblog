@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Welcome to Jekyll!</title>
-  <meta name="description" content="You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different wa...">
+  <title>Day 2 - All About Jekyll</title>
+  <meta name="description" content="This is getting posted a day late, but for good reason! I spent all evening working in Unity, thinking I’d get a few good hours of code in, write this devlog...">
 
   <link rel="stylesheet" href="/myblog/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/myblog/jekyll/update/2017/12/01/welcome-to-jekyll.html">
+  <link rel="canonical" href="http://localhost:4000/myblog/2017/12/02/day-2.html">
   <link rel="alternate" type="application/rss+xml" title="Telahnus&#39; Dev Blog" href="/myblog/feed.xml">
   
   
@@ -70,30 +70,43 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">Welcome to Jekyll!</h1>
+    <h1 class="post-title" itemprop="name headline">Day 2 - All About Jekyll</h1>
     <p class="post-meta">
-      <time datetime="2017-12-01T20:18:46-04:00" itemprop="datePublished">
+      <time datetime="2017-12-02T12:00:00-04:00" itemprop="datePublished">
         
-        Dec 1, 2017
+        Dec 2, 2017
       </time>
       </p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>You’ll find this post in your <code class="highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+    <p>This is getting posted a day late, but for good reason! I spent all evening working in Unity, thinking I’d get a few good hours of code in, write this devlog and call it a night. But, one of the first rules of coding, never expect things to go as planned… I was up until 1am trying to suss things out with Unity, before eventually giving up and going to bed, and forgot all about the devlog. My bad.</p>
 
-<p>To add new posts, simply add a file in the <code class="highlighter-rouge">_posts</code> directory that follows the convention <code class="highlighter-rouge">YYYY-MM-DD-name-of-post.ext</code> and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
+<h2 id="my-journey-with-jekyll">My Journey With Jekyll</h2>
 
-<p>Jekyll also offers powerful support for code snippets:</p>
+<p>But today is a new day! And I wanted to talk first about how I actually set up this devlog. Jekyll is a static site generator. What does that mean? Well, most websites and online blogs involve a backend with a database and server. So as you browse a page there may be some back-and-forth communication between you (the client) and the server. But with a static site, you load the page once, and that’s it.</p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
-<span class="k">end</span>
-<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
-<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
+<h4 id="benefits-of-a-backend">Benefits of a Backend</h4>
 
-<p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>
+<p>With a backend server, you can create your page in pieces, and combine or switch pieces on the fly. A blog page could have a header piece with the site’s menu, a footer piece with the contact and legal info, and a main section for the blog entry. When someone requests a page, the server knows to put together a header, footer, and the correct blog entry, and pass that to the client. When they want a different page, the server uses the same header and footer, but with a different main content section. If your contact info every changes, you can edit one file, and those changes will appear whenever that file is used to build a page.</p>
 
+<h4 id="static-sites">Static Sites</h4>
+
+<p>A static site can’t do that. Every page needs to be premade with everything it needs. So a static blog has the same header and footer code copied and pasted into every file. Which is a waste of time and effort when you start getting 10s or 100s of entries. And what if you change the menu buttons or your contact info? You’ll have to go in and edit every single page again!</p>
+
+<h4 id="what-is-jekyll">What is Jekyll?</h4>
+
+<p>A static site generator, like Jekyll, lets you build a site as if it had a backend server, creating pieces to mix and match. But then, just like with a lot of coding languages, it has to compile and build your site, stitching the pieces together for you. You might code the header and footer as seperate files. Jekyll will then copy and paste those into every blog page you have. It also let’s you code variables into your pages, that Jekyll recognizes and fills in when you compile and build it.</p>
+
+<p>The two approaches result in the same product for the client. But if you don’t or can’t have a backend server to put the pieces together on the fly, you can have a static site generator do it for you before hand.</p>
+
+<h4 id="issues-with-jekyll">Issues with Jekyll</h4>
+
+<p>One of the main difficulties working with Jekyll, is that it was not designed to work on the Windows OS. Which means extra steps, running into issues, searching for fixes, finding guides or solutions that don’t quite work because their setup is slightly different than yours, etc… Thankfully, the <a href="https://programminghistorian.org/lessons/building-static-sites-with-jekyll-github-pages">guide</a> I found seems to work for the most part. The only real issue I had was when trying to add on the github-pages gem. This Ruby gem is supposed to be specifically made to run Jekyll with Github-Pages in mind, adding a few features and adhering to a specific file structure. But since Jekyll wasn’t designed to work on Windows, I guess some of the settings in the Github-Pages gem don’t mesh. And after an hour of messing around with Ruby, bundle, configs, etc, I called for a <code class="highlighter-rouge">git revert</code>, and stuck with the working setup I had. And that’s where we’re at!</p>
+
+<h2 id="ludum-dare-40">Ludum Dare 40</h2>
+
+<p>I was gonna write about what I got up to in Unity yesterday that took me past midnight. But I’ve already been writing for a while and really want to get into today’s work. So maybe I’ll do a mid-afternoon update with that content!</p>
 
   </div>
 
