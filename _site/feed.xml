@@ -1,4 +1,54 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/myblog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/myblog/" rel="alternate" type="text/html" /><updated>2017-12-03T13:27:28-04:00</updated><id>http://localhost:4000/myblog/</id><title type="html">Telahnus’ Dev Blog</title><subtitle>I'll put a description here tomorrow :P</subtitle><entry><title type="html">Day 2 - All About Jekyll</title><link href="http://localhost:4000/myblog/2017/12/02/day-2.html" rel="alternate" type="text/html" title="Day 2 - All About Jekyll" /><published>2017-12-02T12:00:00-04:00</published><updated>2017-12-02T12:00:00-04:00</updated><id>http://localhost:4000/myblog/2017/12/02/day-2</id><content type="html" xml:base="http://localhost:4000/myblog/2017/12/02/day-2.html">&lt;p&gt;This is getting posted a day late, but for good reason! I spent all evening working in Unity, thinking I’d get a few good hours of code in, write this devlog and call it a night. But, one of the first rules of coding, never expect things to go as planned… I was up until 1am trying to suss things out with Unity, before eventually giving up and going to bed, and forgot all about the devlog. My bad.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="localhost:4000/myblog/feed.xml" rel="self" type="application/atom+xml" /><link href="localhost:4000/myblog/" rel="alternate" type="text/html" /><updated>2017-12-03T23:14:14-04:00</updated><id>localhost:4000/myblog/</id><title type="html">Telahnus’ Dev Blog</title><subtitle>I'll put a description here tomorrow :P</subtitle><entry><title type="html">Day 3 - Getting Back Into Unity</title><link href="localhost:4000/myblog/2017/12/03/day-3.html" rel="alternate" type="text/html" title="Day 3 - Getting Back Into Unity" /><published>2017-12-03T22:00:00-04:00</published><updated>2017-12-03T22:00:00-04:00</updated><id>localhost:4000/myblog/2017/12/03/day-3</id><content type="html" xml:base="localhost:4000/myblog/2017/12/03/day-3.html">&lt;p&gt;Day 3 of Ludum Dare 40 has not been much better than day 2 unfortunately. But at least I can talk a bit about Ludum Dare and Unity.&lt;/p&gt;
+
+&lt;h2 id=&quot;ludum-dare&quot;&gt;&lt;a href=&quot;https://ldjam.com/&quot;&gt;Ludum Dare&lt;/a&gt;&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Ludum Dare is one of the world’s largest and longest running Game Jam events. Every 4 months, we challenge creators to make a game from scratch in a weekend.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;A lot of famous indie games got their start as a weekend project from Ludum Dare. This event, the 40th (which I guess means it’s been going for 10 years!), the theme is:&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;The more you have, the worse it is&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;My buddy, Sionnis, and I spent Friday night brainstorming how to use this theme. The uninventive but typical implementation might have been any sort of accumulating negative status effect, possibly gained by collecting the game’s objectives. Taking hits might slow you down, collecting coins might weigh you down and reduce your jump height, spawn more enemies as you collect more macguffins, etc.&lt;/p&gt;
+
+&lt;p&gt;We eventually came up with an idea to have the player act as a beat cop, patrolling larger and larger portions of a city. The catch though, is that as the player’s patrol route grows in size, so to does the area that criminals can come from. It would then become a careful balancing act between adding more streets (and the businesses and people residing there) versus having more locations for criminals to spawn from, and those spawn points being further away from the player’s current position.&lt;/p&gt;
+
+&lt;h2 id=&quot;working-in-unity&quot;&gt;Working in &lt;a href=&quot;https://unity3d.com/&quot;&gt;Unity&lt;/a&gt;&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Unity is a cross-platform game engine developed by Unity Technologies, which is primarily used to develop video games and simulations for computers, consoles and mobile devices. - Wikipedia&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In very basic terms, Unity allows you to code a game without having to worry about how to render all the graphics and calculate all of the physics. You can plop objects into a 3D space, fiddle with their properties, and attach scripts to control their behaviour.&lt;/p&gt;
+
+&lt;p&gt;So, whenever you start a project, the first step should be to break it down into manageable steps. My game needs:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;a “tile” system to represent new roads being added to the player’s patrol&lt;/li&gt;
+  &lt;li&gt;a token to represent where the player is located on the map&lt;/li&gt;
+  &lt;li&gt;the various actions that the player can perform&lt;/li&gt;
+  &lt;li&gt;a turn system&lt;/li&gt;
+  &lt;li&gt;criminals&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I decided to start with the tile system. It involves graph theory! Nodes, edges, vertices, connectivity, I learned all about those things at university!&lt;/p&gt;
+
+&lt;p&gt;I have not finished the tile system…&lt;/p&gt;
+
+&lt;p&gt;One problem, is that I had not used Unity or programmed in C# in over a year. So I had to relearn a lot of basic things, like setting types for variables, something I haven’t had to do in JavaScript the past few years. But the real problem, and the real time waster, was attempting to just jump back into things, coding up a storm, realizing there is a major flaw or design problem, scrapping things and starting again, and again, and again. Sure, I’m relearning lots as I go. But it has &lt;strong&gt;NOT&lt;/strong&gt; been time efficient, which is what you need during a 3-day jam.&lt;/p&gt;
+
+&lt;p&gt;I started by creating some very basic “prefabs” of the road tiles I would be using. Prefabs are 3D objects/models that I can reuse, spawning them as my scripts require. Then I created a high-level game manager script to oversee things, instantiate the prefabs, hold the coded representation of the game board, etc. But figuring out the best way to do that has been &lt;strong&gt;such&lt;/strong&gt; a headache. It was easy enough to instantiate each of my prefabs, but I also need to attach a script to tile to represent it in the code and track its connections, switch out the model if needed, etc. It’s an issue I have yet to solve. Earlier today, I had the idea to make a generic Tile prefab with references to the other prefabs required to model the different street shapes. But that had implementation issues when trying to switch one prefab for another but maintain the same Tile class as a script component.&lt;/p&gt;
+
+&lt;p&gt;Tomorrow’s idea is to create a Tile Factory class, a design pattern meant to manage the creation of Tiles (both their gameobjects and their scripted information/code). Thinking about it now, I even have a few more ideas.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;a method to pull &amp;amp; save Tile info then “paste” it into a new object. I don’t want every single Tile to &lt;em&gt;be&lt;/em&gt; all types of tiles, and just turn different ones on or off. I want to replace the gameobject. But script components (like the one containing the info needed to keep it in a graph) must be attached to gameobjects. So, when it comes time to switch out a blank tile for a 3-way intersection, I can save the info from the blank tile, delete the gameobject, create a new one, paste the old info in, and voila!&lt;/li&gt;
+  &lt;li&gt;I should also really look into other design patterns. I could easily create some sort of inheritance patterns between the different types of tiles. There are managers, factories, and many more design patterns that would almost certainly be of help. And taking the time to document and design everything in detail should really help me get a better sense of what exactly I need to do, rather than just floundering in the water.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Anyways, I really just want to burrito in bed now.&lt;/p&gt;
+
+&lt;p&gt;Ooo, and tmrw I’ll try posting screenshots, or code snippets.&lt;/p&gt;</content><author><name></name></author><category term="devember" /><category term="jekyll" /><category term="ld40" /><summary type="html">Day 3 of Ludum Dare 40 has not been much better than day 2 unfortunately. But at least I can talk a bit about Ludum Dare and Unity.</summary></entry><entry><title type="html">Day 2 - All About Jekyll</title><link href="localhost:4000/myblog/2017/12/02/day-2.html" rel="alternate" type="text/html" title="Day 2 - All About Jekyll" /><published>2017-12-02T12:00:00-04:00</published><updated>2017-12-02T12:00:00-04:00</updated><id>localhost:4000/myblog/2017/12/02/day-2</id><content type="html" xml:base="localhost:4000/myblog/2017/12/02/day-2.html">&lt;p&gt;This is getting posted a day late, but for good reason! I spent all evening working in Unity, thinking I’d get a few good hours of code in, write this devlog and call it a night. But, one of the first rules of coding, never expect things to go as planned… I was up until 1am trying to suss things out with Unity, before eventually giving up and going to bed, and forgot all about the devlog. My bad.&lt;/p&gt;
 
 &lt;h2 id=&quot;my-journey-with-jekyll&quot;&gt;My Journey With Jekyll&lt;/h2&gt;
 
@@ -24,7 +74,7 @@
 
 &lt;h2 id=&quot;ludum-dare-40&quot;&gt;Ludum Dare 40&lt;/h2&gt;
 
-&lt;p&gt;I was gonna write about what I got up to in Unity yesterday that took me past midnight. But I’ve already been writing for a while and really want to get into today’s work. So maybe I’ll do a mid-afternoon update with that content!&lt;/p&gt;</content><author><name></name></author><category term="devember" /><category term="jekyll" /><category term="ld40" /><summary type="html">This is getting posted a day late, but for good reason! I spent all evening working in Unity, thinking I’d get a few good hours of code in, write this devlog and call it a night. But, one of the first rules of coding, never expect things to go as planned… I was up until 1am trying to suss things out with Unity, before eventually giving up and going to bed, and forgot all about the devlog. My bad.</summary></entry><entry><title type="html">Day 1</title><link href="http://localhost:4000/myblog/2017/12/01/day-1.html" rel="alternate" type="text/html" title="Day 1" /><published>2017-12-01T23:35:00-04:00</published><updated>2017-12-01T23:35:00-04:00</updated><id>http://localhost:4000/myblog/2017/12/01/day-1</id><content type="html" xml:base="http://localhost:4000/myblog/2017/12/01/day-1.html">&lt;h1 id=&quot;hello-world&quot;&gt;Hello, World!&lt;/h1&gt;
+&lt;p&gt;I was gonna write about what I got up to in Unity yesterday that took me past midnight. But I’ve already been writing for a while and really want to get into today’s work. So maybe I’ll do a mid-afternoon update with that content!&lt;/p&gt;</content><author><name></name></author><category term="devember" /><category term="jekyll" /><category term="ld40" /><summary type="html">This is getting posted a day late, but for good reason! I spent all evening working in Unity, thinking I’d get a few good hours of code in, write this devlog and call it a night. But, one of the first rules of coding, never expect things to go as planned… I was up until 1am trying to suss things out with Unity, before eventually giving up and going to bed, and forgot all about the devlog. My bad.</summary></entry><entry><title type="html">Day 1</title><link href="localhost:4000/myblog/2017/12/01/day-1.html" rel="alternate" type="text/html" title="Day 1" /><published>2017-12-01T23:35:00-04:00</published><updated>2017-12-01T23:35:00-04:00</updated><id>localhost:4000/myblog/2017/12/01/day-1</id><content type="html" xml:base="localhost:4000/myblog/2017/12/01/day-1.html">&lt;h1 id=&quot;hello-world&quot;&gt;Hello, World!&lt;/h1&gt;
 
 &lt;p&gt;Today is Day 1 of &lt;a href=&quot;devember.org&quot;&gt;Devember&lt;/a&gt;, an excuse to program and blog every day of the month. The official self-enforced contract is as follows:&lt;/p&gt;
 
