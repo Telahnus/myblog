@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Telahnus&#39; Dev Blog</title>
-  <meta name="description" content="I&#39;ll put a description here tomorrow :P">
+  <title>Day 4 - End of Ludum Dare</title>
+  <meta name="description" content="Did Not Finish Sad face. I did not finish my game for Ludum Dare. Didn’t even come close. I spent 3 days banging my head against the tile system. To be fair,...">
 
   <link rel="stylesheet" href="/myblog/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/myblog/">
+  <link rel="canonical" href="http://localhost:4000/myblog/2017/12/04/day-4.html">
   <link rel="alternate" type="application/rss+xml" title="Telahnus&#39; Dev Blog" href="/myblog/feed.xml">
   
   
@@ -67,65 +67,32 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <div class="home">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <h1 class="page-heading">Posts</h1>
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Day 4 - End of Ludum Dare</h1>
+    <p class="post-meta">
+      <time datetime="2017-12-04T22:00:00-04:00" itemprop="datePublished">
+        
+        Dec 4, 2017
+      </time>
+      </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <h2 id="did-not-finish">Did Not Finish</h2>
+<p>Sad face. I did not finish my game for Ludum Dare. Didn’t even come close. I spent 3 days banging my head against the tile system. To be fair, it was an ambitious design choice for starting fresh. A physics based platformer has a <strong>lot</strong> less overhead that needs coding, as Unity can provide its own physics engine. But dealing with tiles, turns, etc is all on the programmer to code.</p>
+
+<p>That said, I did accomplish a few things. In my game, the map is made of tiles. These tiles start off as blank spaces. When a player moves onto them, they flip over, revealing a randomized road layout that must connect to any other existing roads around the tile. It was this problem, getting a new tile to sync up with surrounding tiles, that proved the most difficult part for me logically. I knew what I wanted to do, just not how.</p>
+
+<p>After hours of brain busting, I finally got the code to check surrounding tiles for existing roads, match them up with the new tile, randomly add extra roads, then create the appropriate tile for the amount of roads that it should have.</p>
+
+<p>But it’s way past midnight, so I’m already technically cheating for Devember by writing this blog post the next day. Tomorrow I orientate the flipped tile, and add new blank tiles surrounding the flipped one. Goodnight, world!</p>
+
+  </div>
+
   
-  
-
-
-  <ul class="post-list">
-    
-      <li>
-        
-        <span class="post-meta">Dec 5, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/myblog/2017/12/05/day-5.html">Day 5 - Tiles Done</a>
-        </h2>
-      </li>
-    
-      <li>
-        
-        <span class="post-meta">Dec 4, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/myblog/2017/12/04/day-4.html">Day 4 - End of Ludum Dare</a>
-        </h2>
-      </li>
-    
-      <li>
-        
-        <span class="post-meta">Dec 3, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/myblog/2017/12/03/day-3.html">Day 3 - Getting Back Into Unity</a>
-        </h2>
-      </li>
-    
-      <li>
-        
-        <span class="post-meta">Dec 2, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/myblog/2017/12/02/day-2.html">Day 2 - All About Jekyll</a>
-        </h2>
-      </li>
-    
-      <li>
-        
-        <span class="post-meta">Dec 1, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/myblog/2017/12/01/day-1.html">Day 1</a>
-        </h2>
-      </li>
-    
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="/myblog/feed.xml">via RSS</a></p>
-
-</div>
+</article>
 
       </div>
     </main>

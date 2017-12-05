@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Telahnus&#39; Dev Blog</title>
-  <meta name="description" content="I&#39;ll put a description here tomorrow :P">
+  <title>Day 5 - Tiles Done</title>
+  <meta name="description" content="Today was quite productive! Despite Ludum Dare being over, I still want to finish this game. And today, I think I’ve finally got a handle on the tile generat...">
 
   <link rel="stylesheet" href="/myblog/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/myblog/">
+  <link rel="canonical" href="http://localhost:4000/myblog/2017/12/05/day-5.html">
   <link rel="alternate" type="application/rss+xml" title="Telahnus&#39; Dev Blog" href="/myblog/feed.xml">
   
   
@@ -67,65 +67,31 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <div class="home">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <h1 class="page-heading">Posts</h1>
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Day 5 - Tiles Done</h1>
+    <p class="post-meta">
+      <time datetime="2017-12-05T17:30:00-04:00" itemprop="datePublished">
+        
+        Dec 5, 2017
+      </time>
+      </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Today was quite productive! Despite Ludum Dare being over, I still want to finish this game. And today, I think I’ve finally got a handle on the tile generation.</p>
+
+<p>Yesterday I said how I was able to flip a tile, and determsine how many roads it should get. What I had not finished was orienting the new tile. So, a lot of time today was spent just trying to figure out the most effective way to do this. It also involved a lot of arguing with my buddy Sionnis. :P</p>
+
+<p>Anywho, after getting a tile to flip properly, determine how many roads to get, spawn the prefab, and orient it, the next step would be spawning all the new blank tiles in the free spaces around it and link everything up. This took muuuch less time than creating the flipped tile. Especially after changing how I had tiles store their neighbours and open road connections. It just meant a few extra steps when exchanging that info between the flipped tile and it’s neighbours.</p>
+
+<p>But now, after 5 days, I have fully functioning (but not rigorously tested) tile generation. Next steps are character movement to trigger that tile flipping. Heck, it may even get done after supper tonight!</p>
+
+  </div>
+
   
-  
-
-
-  <ul class="post-list">
-    
-      <li>
-        
-        <span class="post-meta">Dec 5, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/myblog/2017/12/05/day-5.html">Day 5 - Tiles Done</a>
-        </h2>
-      </li>
-    
-      <li>
-        
-        <span class="post-meta">Dec 4, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/myblog/2017/12/04/day-4.html">Day 4 - End of Ludum Dare</a>
-        </h2>
-      </li>
-    
-      <li>
-        
-        <span class="post-meta">Dec 3, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/myblog/2017/12/03/day-3.html">Day 3 - Getting Back Into Unity</a>
-        </h2>
-      </li>
-    
-      <li>
-        
-        <span class="post-meta">Dec 2, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/myblog/2017/12/02/day-2.html">Day 2 - All About Jekyll</a>
-        </h2>
-      </li>
-    
-      <li>
-        
-        <span class="post-meta">Dec 1, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/myblog/2017/12/01/day-1.html">Day 1</a>
-        </h2>
-      </li>
-    
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="/myblog/feed.xml">via RSS</a></p>
-
-</div>
+</article>
 
       </div>
     </main>
