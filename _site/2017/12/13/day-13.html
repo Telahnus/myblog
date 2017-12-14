@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Telahnus&#39; Dev Blog</title>
-  <meta name="description" content="I&#39;ll put a description here tomorrow :P">
+  <title>Day 13 - Catching Crooks</title>
+  <meta name="description" content="Today was pretty good and I got quite a bit done on my game.">
 
   <link rel="stylesheet" href="/myblog/assets/main.css">
-  <link rel="canonical" href="https://telahnus.github.io/myblog/">
+  <link rel="canonical" href="https://telahnus.github.io/myblog/2017/12/13/day-13.html">
   <link rel="alternate" type="application/rss+xml" title="Telahnus&#39; Dev Blog" href="/myblog/feed.xml">
   
   
@@ -67,119 +67,37 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <div class="home">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <h1 class="page-heading">Posts</h1>
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Day 13 - Catching Crooks</h1>
+    <p class="post-meta">
+      <time datetime="2017-12-13T23:00:00-04:00" itemprop="datePublished">
+        
+        Dec 13, 2017
+      </time>
+      </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Today was pretty good and I got quite a bit done on my game.</p>
+
+<p>In order to select tiles, and display information about them, I thought I’d have to resort to raycasts. Raycasts are sorta like laser pointers, emitting from the camera to where your mouse pointer is, and they return the first object they collide with. This was how I did lots of pointer and aiming stuff a few years prior. But fortunately, things were much much easier this time around! Any game object with a collider has all the typical mouse events that come with most programming languages with a UI. I just had to add a collider to my tiles, and give them function calls for OnMouseClick. Each tile is given their own instance of the OnMouseClick, so they can send their own info the GUI Manager to update the UI with the appropriate info. I then display info about the tile, and info about any criminal that may be there as well.</p>
+
+<p>With the knowledge of mouse events, I was also able to implement highlighting of selected tiles. It took a bit to figure out colors again, and my method ended up being a bit more hack-y than is probably best. I expect I should actually be changing the material or shaders or something. But OnMouseEnter, I simply subtract from the RGB of the renderer components. And OnMouseExit, I add back to normal. Works well enough.</p>
+
+<p>I also got my cop to actually capture criminals now. He simply has to move onto the same tile as one, press Q (the contextual action button), and expend as much AP as the toughness of the criminal to put him in jail!</p>
+
+<p>Actually, I should probably add some display on the UI to say what the contextual action will be as well. The idea is that some tiles will have special effects that can be triggered for AP: increasing public safety, decreasing spawn rates, etc</p>
+
+<p>And lastly, I added a warning when the player attempts an action they do not have enough AP for. Which basically just required adding a new UI component. Unfortunately, the amount of UI update calls that are happening is starting to get a little out of hand. I feel like I need to consolidate them all and have a general update function at the end of each frame to ensure all the specific UI pieces are up to date.</p>
+
+<p>Really, the best part about doing this blog is giving me a bit of a wind-down time at the end of the day to think about the project, realize mistakes I may have made or alternatives I could try, and come up with plans for the next day.</p>
+
+  </div>
+
   
-  
-
-
-  <ul class="post-list">
-    
-      <li>
-        
-        <span class="post-meta">Dec 13, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/myblog/2017/12/13/day-13.html">Day 13 - Catching Crooks</a>
-        </h2>
-      </li>
-    
-      <li>
-        
-        <span class="post-meta">Dec 12, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/myblog/2017/12/12/day-12.html">Day 12 - It&#39;s Just So Criminal!</a>
-        </h2>
-      </li>
-    
-      <li>
-        
-        <span class="post-meta">Dec 8, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/myblog/2017/12/08/day-9.html">Day 9 - CodeSchool jQuery</a>
-        </h2>
-      </li>
-    
-      <li>
-        
-        <span class="post-meta">Dec 8, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/myblog/2017/12/08/day-8.html">Day 8 - GUI Galore</a>
-        </h2>
-      </li>
-    
-      <li>
-        
-        <span class="post-meta">Dec 6, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/myblog/2017/12/06/day-6.html">Day 6 - Getting Groovy With GUIs</a>
-        </h2>
-      </li>
-    
-      <li>
-        
-        <span class="post-meta">Dec 5, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/myblog/2017/12/05/day-5-a.html">Day 5a - Even more progress!</a>
-        </h2>
-      </li>
-    
-      <li>
-        
-        <span class="post-meta">Dec 5, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/myblog/2017/12/05/day-5.html">Day 5 - Tiles Done</a>
-        </h2>
-      </li>
-    
-      <li>
-        
-        <span class="post-meta">Dec 4, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/myblog/2017/12/04/day-4.html">Day 4 - End of Ludum Dare</a>
-        </h2>
-      </li>
-    
-      <li>
-        
-        <span class="post-meta">Dec 3, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/myblog/2017/12/03/day-3.html">Day 3 - Getting Back Into Unity</a>
-        </h2>
-      </li>
-    
-      <li>
-        
-        <span class="post-meta">Dec 2, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/myblog/2017/12/02/day-2.html">Day 2 - All About Jekyll</a>
-        </h2>
-      </li>
-    
-      <li>
-        
-        <span class="post-meta">Dec 1, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/myblog/2017/12/01/day-1.html">Day 1</a>
-        </h2>
-      </li>
-    
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="/myblog/feed.xml">via RSS</a></p>
-
-</div>
+</article>
 
       </div>
     </main>
